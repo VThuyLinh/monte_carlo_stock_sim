@@ -1,0 +1,9 @@
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\deps\data_url-0bcc16741940f238.d: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\lib.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\forgiving_base64.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\mime.rs
+
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\deps\libdata_url-0bcc16741940f238.rlib: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\lib.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\forgiving_base64.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\mime.rs
+
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\deps\libdata_url-0bcc16741940f238.rmeta: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\lib.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\forgiving_base64.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\mime.rs
+
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\lib.rs:
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\forgiving_base64.rs:
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\data-url-0.3.2\src\mime.rs:

@@ -1,0 +1,11 @@
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\deps\i_slint_common-d7f555f42f4fadce.d: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\lib.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\builtin_structs.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\enums.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\key_codes.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\README.md
+
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\deps\libi_slint_common-d7f555f42f4fadce.rlib: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\lib.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\builtin_structs.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\enums.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\key_codes.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\README.md
+
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\deps\libi_slint_common-d7f555f42f4fadce.rmeta: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\lib.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\builtin_structs.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\enums.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\key_codes.rs C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\README.md
+
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\lib.rs:
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\builtin_structs.rs:
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\enums.rs:
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\key_codes.rs:
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\i-slint-common-1.14.1\README.md:

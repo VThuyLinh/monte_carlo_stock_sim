@@ -1,0 +1,1 @@
+SharedPixelBuffer<rgb::formats::rgb::Rgb<u8>>

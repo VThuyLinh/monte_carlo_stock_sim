@@ -1,0 +1,18 @@
+[package]
+name = "app_gui"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+slint = "1.5"
+anyhow = "1.0"
+data_io = { path = "../data_io" }
+core_sim = { path = "../core_sim" }
+plotters = "0.3"
+plotters-slint = "0.1"
+rand = "0.8"
+chrono = "0.4"
+nalgebra = "0.32"
+
+[build-dependencies]
+slint-build = "1.5" # THÊM DÒNG NÀY VÀO

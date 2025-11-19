@@ -1,0 +1,2 @@
+plotters::series::Histogram<'a, BR, A, Tag>
+plotters::series::Histogram<'_, _, _, _>

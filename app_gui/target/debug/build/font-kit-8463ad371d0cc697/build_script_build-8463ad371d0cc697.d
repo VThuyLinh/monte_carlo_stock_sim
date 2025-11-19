@@ -1,0 +1,5 @@
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\build\font-kit-8463ad371d0cc697\build_script_build-8463ad371d0cc697.d: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\font-kit-0.14.3\build.rs
+
+C:\Users\tlinh\monte_carlo_stock_sim\app_gui\target\debug\build\font-kit-8463ad371d0cc697\build_script_build-8463ad371d0cc697.exe: C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\font-kit-0.14.3\build.rs
+
+C:\Users\tlinh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\font-kit-0.14.3\build.rs:

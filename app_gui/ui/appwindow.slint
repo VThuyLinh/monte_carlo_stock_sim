@@ -1,0 +1,231 @@
+// Thay thế Widget/DrawingArea bằng Rectangle
+component ChartWidget inherits Rectangle { // 👈 SỬA Ở ĐÂY
+    // Property này sẽ chứa dữ liệu đồ thị (từ Rust)
+    in property <[ [float] ]> simulation-paths: [ ];
+    
+    // Callback này sẽ được Rust triển khai để thực hiện vẽ đồ thị
+    pure callback draw; 
+
+    width: 100%;
+    height: 100%;
+
+    background: #F0F0F0; // Nền đồ thị
+
+    
+}
+
+
+
+export component AppWindow inherits Window {
+    title: "Monte Carlo Stock Simulator (Minimal UI)";
+    width: 650px;
+    height: 500px;
+
+    // --- Data Properties ---
+    in property <string> file-path: "stock_data.csv";
+    in property <string> ticker: "AAA";
+    in property <string> data-info: "CHƯA TẢI DỮ LIỆU";
+    
+    in property <string> last-close-price-str: "N/A";
+    in property <string> daily-mu-est-str: "N/A";
+    in property <string> daily-sigma-est-str: "N/A";
+
+    // --- Simulation Parameters ---
+    in property <string> initial-price-input-str: "100.0";
+    in property <string> horizon-days-str: "252";
+    in property <string> num-paths-str: "10000";
+    in property <string> dt-input-str: "1.0";
+    in property <string> mu-override-str: "0.0";
+    in property <string> sigma-override-str: "0.0";
+    in property <string> random-seed-str: "12345";
+    in property <bool> antithetic-variates: false;
+    in property <string> model-type: "GBM";
+
+    // --- Result Properties ---
+    in property <string> metrics-summary: "CHƯA CHẠY MÔ PHỎNG";
+    in property <string> execution-time: "0ms";
+    in property <[ [float] ]> chart-paths: [ ]; 
+
+    // Handlers
+    callback load-data;
+    callback run-simulation; 
+    callback export-summary;
+    callback export-chart;
+
+    
+    VerticalLayout {
+        spacing: 5px;
+        padding: 5px;
+
+        // --- 1. Data Input Panel ---
+        Text { text: "1. DỮ LIỆU & ƯỚC TÍNH"; }
+        HorizontalLayout {
+            spacing: 5px;
+            Text { text: "File/Ticker: " + file-path + " / " + ticker; }
+            Text { text: data-info; }
+            
+            TouchArea {
+                Text { text: "[CLICK: LOAD & ESTIMATE]"; color: blue; }
+                clicked => { load-data(); } 
+            }
+        }
+        
+        HorizontalLayout {
+            spacing: 10px;
+            Text { text: "P0 (Last Close): " + last-close-price-str; }
+            Text { text: "Daily mu: " + daily-mu-est-str; }
+            Text { text: "Daily sigma: " + daily-sigma-est-str; }
+        }
+        
+        // --- 2. Simulation Config Panel ---
+        Text { text: "2. CẤU HÌNH MÔ PHỎNG"; }
+        VerticalLayout {
+            Text { text: "Model: " + model-type + " (P0: " + initial-price-input-str + ", Paths: " + num-paths-str + ")"; }
+            Text { text: "μ/σ Override: " + mu-override-str + " / " + sigma-override-str; }
+            Text { text: "Horizon/dt/Seed: " + horizon-days-str + " / " + dt-input-str + " / " + random-seed-str; }
+            Text { text: "Antithetic: " + (antithetic-variates ? "BẬT" : "TẮT"); }
+        }
+        
+        TouchArea {
+            Text { text: "▶️ [CLICK: RUN SIMULATION]"; color: green; }
+            clicked => { run-simulation(); } 
+        }
+
+        // --- 3. Results Panel ---
+        Text { text: "3. KẾT QUẢ MÔ PHỎNG"; }
+        HorizontalLayout {
+            spacing: 5px;
+            VerticalLayout {
+                Text { text: metrics-summary; width: 250px; }
+                Text { text: "Execution Time: " + execution-time; }
+                HorizontalLayout {
+                    spacing: 5px;
+                    TouchArea { 
+                        Text { text: "[Export Summary]"; color: blue; }
+                        clicked => { export-summary(); }
+                    }
+                    TouchArea {
+                        Text { text: "[Export Chart]"; color: blue; }
+                        clicked => { export-chart(); }
+                    }
+                }
+            }
+            ChartWidget { 
+                min-width: 300px;
+                min-height: 250px;
+                simulation-paths: chart-paths;
+            }
+        }
+    }
+}
+
+
+
+// // LOẠI BỎ TẤT CẢ CÁC LỆNH IMPORT VÌ CHÚNG GÂY LỖI
+
+// export component AppWindow inherits Window {
+//     title: "Monte Carlo Stock Simulator (Minimal UI)";
+//     width: 650px;
+//     height: 500px;
+
+//     // --- Data Properties ---
+//     // Các property này vẫn được Rust truy cập qua các getter
+//     property <string> file-path: "stock_data.csv";
+//     property <string> ticker: "AAPL";
+//     in property <string> data-info: "CHƯA TẢI DỮ LIỆU";
+    
+//     in property <string> last-close-price-str: "N/A";
+//     in property <string> daily-mu-est-str: "N/A";
+//     in property <string> daily-sigma-est-str: "N/A";
+
+//     // --- Simulation Parameters ---
+//     property <string> initial-price-input-str: "100.0";
+//     property <string> horizon-days-str: "252";
+//     property <string> num-paths-str: "10000";
+//     property <string> dt-input-str: "1.0";
+//     property <string> mu-override-str: "0.0";
+//     property <string> sigma-override-str: "0.0";
+//     property <string> random-seed-str: "12345";
+//     property <bool> antithetic-variates: false;
+//     property <string> model-type: "GBM";
+
+//     // --- Result Properties ---
+//     in property <string> metrics-summary: "CHƯA CHẠY MÔ PHỎNG";
+//     in property <string> execution-time: "0ms";
+
+//     // Handlers
+//     callback load-data;
+//     callback run-simulation; 
+    
+//     VerticalLayout {
+//         spacing: 5px;
+//         padding: 5px;
+
+//         Text { text: "⚠️ KHÔNG THỂ CHỈNH SỬA UI: SỬA TRONG CODE RUST ⚠️"; color: red; }
+        
+//         // --- 1. Data Input Panel ---
+//         Text { text: "1. DỮ LIỆU & ƯỚC TÍNH"; }
+//         HorizontalLayout {
+//             spacing: 5px;
+//             Text { text: "File/Ticker: " + file-path + " / " + ticker; }
+//             Text { text: data-info; }
+            
+//             // SỬ DỤNG TOUCHAREA CHO BUTTON LOAD
+//             TouchArea {
+//                 Text { 
+//                     text: "[CLICK: LOAD & ESTIMATE]";
+//                     color: blue;
+//                 }
+//                 clicked => { load-data(); } 
+//             }
+//         }
+        
+//         HorizontalLayout {
+//             spacing: 10px;
+//             Text { text: "P0 (Last Close): " + last-close-price-str; }
+//             Text { text: "Daily mu: " + daily-mu-est-str; }
+//             Text { text: "Daily sigma: " + daily-sigma-est-str; }
+//         }
+        
+//         // --- 2. Simulation Config Panel ---
+//         Text { text: "2. CẤU HÌNH MÔ PHỎNG"; }
+//         VerticalLayout {
+//             Text { text: "Model: " + model-type + " (P0: " + initial-price-input-str + ", Paths: " + num-paths-str + ")"; }
+//             Text { text: "μ/σ Override: " + mu-override-str + " / " + sigma-override-str; }
+//             Text { text: "Horizon/dt/Seed: " + horizon-days-str + " / " + dt-input-str + " / " + random-seed-str; }
+            
+//             // SỬA LỖI BOOLEAN SANG STRING
+//             Text { text: "Antithetic: " + (antithetic-variates ? "BẬT" : "TẮT"); }
+//         }
+        
+//         // SỬ DỤNG TOUCHAREA CHO BUTTON RUN
+//         TouchArea {
+//             Text { 
+//                 text: "▶️ [CLICK: RUN SIMULATION]"; 
+//                 color: green;
+//             }
+//             clicked => { run-simulation(); } 
+//         }
+
+//         // --- 3. Results Panel ---
+//         Text { text: "3. KẾT QUẢ MÔ PHỎNG"; }
+//         HorizontalLayout {
+//             spacing: 5px;
+//             VerticalLayout {
+//                 Text { text: metrics-summary; width: 250px; }
+//                 Text { text: "Execution Time: " + execution-time; }
+//                 HorizontalLayout {
+//                     spacing: 5px;
+//                     Text { text: "[Export Summary]"; color: blue; }
+//                     Text { text: "[Export Chart]"; color: blue; }
+//                 }
+//             }
+//             // Giữ chỗ cho biểu đồ
+//             Rectangle {
+//                 background: gray;
+//                 min-width: 300px;
+//                 min-height: 250px;
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "data_io",
+    "core_sim",
+    "app_gui",
+]
+# Dùng resolver phiên bản 2018
+resolver = "2"
